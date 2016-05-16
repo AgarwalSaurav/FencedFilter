@@ -32,6 +32,9 @@
 
 #include "hlindex.hpp"
 
+#define FF_VERSION_MAJOR 0
+#define FF_VERSION_MINOR 1
+
 
 // Function prototypes as necessary.
 void process_line(char *str);
@@ -1001,7 +1004,7 @@ void test_print_fenced_line_with_highlighting(void)
 {
    printf("\nTest print_fenced_line_with_highlighting()\n\n");
    // Call with fake variables to initialize:
-   set_fence_values(".sql", 0);
+   set_fence_values("sql", 0);
    print_fenced_line_with_highlighting("CREATE PROCEDURE IF NOT EXISTS Bozo");
    print_fenced_line_with_highlighting("if (bozo<hoser) then");
    print_fenced_line_with_highlighting("begin");
@@ -1010,31 +1013,43 @@ void test_print_fenced_line_with_highlighting(void)
    print_fenced_line_with_highlighting("end $$");
 }
 
-void test_load_from_cl(int argc, char **argv)
+void load_from_cl(int argc, char **argv)
 {
    const char *filename = argv[1];
    FILE *stream = fopen(filename, "r");
    if (stream)
-   {
-      fprintf(stderr, "*** FencedFilter: %s (%d arguments)\n", filename, argc);
       scan(stream);
-   }
    else
-   {
       fprintf(stderr, "Unable to open file \"%s\".\n", filename);
-   }
+}
+
+void show_version(void)
+{
+   printf("FencedFilter version %d.%02d.\n\n", FF_VERSION_MAJOR, FF_VERSION_MINOR);
+}
+
+void show_help(void)
+{
+   printf("Usage: fencedfilter <filename>\n\n");
 }
 
 
 int main(int argc, char **argv)
 {
    if (argc>1)
-      test_load_from_cl(argc, argv);
-   else
    {
-      test_print_fenced_line_with_highlighting();
-//      scan(stdin);
+      if (strcmp(argv[1],"--version")==0)
+         show_version();
+      else if (strcmp(argv[1],"--help")==0)
+         show_help();
+      else
+         load_from_cl(argc, argv);
    }
+   // For debugging, set else if (false) to run test_print_fenced_line_with
+   else if (false)
+      show_help();
+   else
+      test_print_fenced_line_with_highlighting();
    
    return 0;
 }
