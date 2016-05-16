@@ -106,6 +106,9 @@ void HLParser::process_line(void)
       ++p;
    }
 
+   if (*p)
+      m_cur_tag = p;
+
    // Continue loop after level found to get line contents:
    while (*p)
    {
@@ -139,7 +142,7 @@ void HLParser::process_line(void)
          if (*p==':')
          {
             found_colon = true;
-            
+
             // Terminate m_tag string
             *p++ = '\0';
             
