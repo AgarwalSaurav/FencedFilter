@@ -1,18 +1,18 @@
 # Fenced Filter User Guide
 
 - [Introduction](#introduction)
-- [How FencedFilter Works](#how_fencedfilter_works)
-- [Scanning for Tag Matches](#scanning_for_tag_matches)
-  - [Non-Eligible Characters in Tags](#non_eligible_characters_in_tags)
-  - [Hyphenated Tags](#hyphenated_tags)
-  - [Comment Tags](#comment_tags)
-- [Highlighting Files](#highlighting_files)
-  - [Enclosing the Match](#enclosing_the_match)
-- [Prepare Doxygen to Use FencedFilter](#prepare_doxygen_to_use_fencedfilter)
-- [Off-label Uses](#off_label_uses)
-  - [Example 1: Highlight a Name](#example_1_highlight_a_name)
-  - [Example 2: Highlight Elements, Data from the Internet](#example_2_highlight_elements_data_from_the_internet)
-  - [Example 3: Highlight CSS, More Internet Data](#example_3_highlight_css_more_internet_data)
+- [How FencedFilter Works](#how-fencedfilter-works)
+- [Scanning for Tag Matches](#scanning-for-tag-matches)
+  - [Non-Eligible Characters in Tags](#non-eligible-characters-in-tags)
+  - [Hyphenated Tags](#hyphenated-tags)
+  - [Comment Tags](#comment-tags)
+- [Highlighting Files](#highlighting-files)
+  - [Enclosing the Match](#enclosing-the-match)
+- [Prepare Doxygen to Use FencedFilter](#prepare-doxygen-to-use-fencedfilter)
+- [Off-label Uses](#off-label-uses)
+  - [Example 1: Highlight a Name](#example-1-highlight-a-name)
+  - [Example 2: Highlight Elements, Data from the Internet](#example-2-highlight-elements-data-from-the-internet)
+  - [Example 3: Highlight CSS, More Internet Data](#example-3-highlight-css-more-internet-data)
 
 
 ## Introduction

@@ -46,7 +46,7 @@ should be familiar to people who have cloned/downloaded projects from GitHub.
 
 Use `cd` to enter the directory, then run `make`.  That's it.
 
-See the [Compatibility](#Compatibility) section above for why this may not work
+See the [Compatibility](#compatibility) section above for why this may not work
 in non-Linux environments.
 
 As I write this README, it occurs to me that I could also have the makefile run
