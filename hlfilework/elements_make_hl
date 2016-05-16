@@ -18,3 +18,4 @@ echo >> ${OUT}
 xsltproc --html elements.xsl info.html >> ${OUT}
 rm info.html
 
+mv ${OUT} ../${OUT}

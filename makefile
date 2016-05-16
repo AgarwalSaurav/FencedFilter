@@ -18,6 +18,7 @@ hlnode.o : hlnode.hpp hlnode.cpp
 
 
 hl:
-	hlfilework/elements_make_hl
-	hlfilework/css_make_hl
-	hlfilework/css3_make_hl
+	cd hlfilework      && \
+	./elements_make_hl && \
+	./css_make_hl      && \
+	./css3_make_hl

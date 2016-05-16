@@ -24,3 +24,4 @@ echo >> ${OUT}
 xsltproc ${TAG}_step_two.xsl ${TAG}_step_one.xml >> ${OUT}
 rm ${TAG}_step_one.xml
 
+mv ${OUT} ../${OUT}
