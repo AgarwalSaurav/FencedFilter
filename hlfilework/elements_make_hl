@@ -1,0 +1,20 @@
+#!/bin/bash
+
+URL=https://en.wikipedia.org/wiki/List_of_elements
+OUT=elements.hl
+
+# Get the information source from internet
+wget -O rawtemp.html ${URL}
+
+# Ensure HTML is valid XML for XSL transforming:
+xmllint --html --xmlout rawtemp.html > info.html
+rm rawtemp.html
+
+# Put URL in comment at top of hl file:
+echo "# Source: ${URL}" > ${OUT}
+echo >> ${OUT}
+
+# Transform the webpage to a highlighting file:
+xsltproc --html elements.xsl info.html >> ${OUT}
+rm info.html
+

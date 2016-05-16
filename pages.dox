@@ -1,0 +1,10 @@
+/**
+ * @page IDENTIFYING_COMMENTS What is a Comment?
+ *
+ * Possible comment identifiers:
+ * - `//`
+ * - `#`
+ * - `-- `
+ * - `;`
+ * - '/*' to '*/'
+ */

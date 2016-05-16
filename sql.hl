@@ -1,0 +1,59 @@
+comment : span.comment
+   \#    # escape hightlight-file comment to include in list
+   --\    # escape single space after double-dash
+
+keyword-flow : span.keywordflow
+   if   # This is the first comment.  It will be removed.
+   case
+   then
+   begin
+   end
+   loop
+   while
+   leave
+   return
+   iterate
+   repeat
+   until
+
+keyword-type : span.keywordtype
+   tinyint
+   smallint
+   mediumint
+   int
+   bigint
+   float
+   double
+   real
+   bit
+   date
+   time
+   datetime
+   timestamp
+   year
+
+keyword : span.keyword
+   create
+   procedure
+   exists
+   unsigned
+   auto_increment
+   zerofill
+   not
+   null
+   default
+
+   
+
+# The contents of a highlight file will be parsed and arranged
+# into a linked tree memory structure.
+#
+# Comments in highlight files start with a '#', and the token
+# and the remainder of the line will be left out of the tree.
+# Leading and trailing spaces are also removed
+#
+# 
+# If it is necessary to include either a '#' or a trailing or
+# leading space,  include a backslash ('\') just prior to the character
+
+   

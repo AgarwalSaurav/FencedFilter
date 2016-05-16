@@ -1,0 +1,4 @@
+!ci   # Case insensitive to match various capitalizations
+
+keyword : span.keywordflow
+   john\ doe        # included spaces must be escaped

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+TAG=css
+URL=https://www.w3.org/TR/CSS22/propidx.html
+OUT=${TAG}.hl
+
+# Get the information from the internet
+wget -O ${TAG}temp.html ${URL}
+
+# Ensure HTML is valid XML for XSL transforming:
+xmllint --html --recover --xmlout ${TAG}temp.html > ${TAG}_step_one.html
+rm ${TAG}temp.html
+
+
+# Transform step 1: get all properties and their values:
+xsltproc --html ${TAG}_step_one.xsl ${TAG}_step_one.html > ${TAG}_step_one.xml
+rm ${TAG}_step_one.html
+
+# Put URL in comment at top of hl file:
+echo "# Source: ${URL}" > ${OUT}
+echo >> ${OUT}
+
+# Transform step 2: final file with duplicate values removed:
+xsltproc ${TAG}_step_two.xsl ${TAG}_step_one.xml >> ${OUT}
+rm ${TAG}_step_one.xml
+
