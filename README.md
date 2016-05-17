@@ -134,7 +134,7 @@ Perhaps this section should be a main header, but here you go.
 
 As I have said above, interest in the program, if there is any,  will influence
 future development.  It works as I need it to for now, though I am itching to do
-mode.  These are some things I would like to do:
+more.  These are some things I would like to do:
 
 1. I'd like to make it a proper Markdown processor to generate HTML.  It doesn't
    seem like that would be too hard, but I can't count the times I have thought
@@ -146,12 +146,12 @@ mode.  These are some things I would like to do:
    the highlighting files each time.  I have considered making the program into
    a service that a very small program would access with sockets.  That way,
    the highlighting files would be read once the first time requested, then
-   reused during the running of Doxygen.  This would only benefit larger projects,
-   and perhaps not even measurably, but the idea appeals to me.
+   reused as long as the service runs.  This would only benefit larger projects,
+   and perhaps not significantly, but the idea appeals to me.
 
 1. I alphabetize the keywords when I parse the highlighting files, but then
-   do a sequential search through the words.  There is room for optimization
-   by keeping a count of keywords and then doing a tree-like search by comparing
-   comparing values at several indexes of the keyword array.
+   do a sequential search through the words.  That's a wasted opportunity, I could
+   be doing a tree-like search by comparing values to keywords at various
+   indexed locations.  This shouldn't be hard.
 
 
