@@ -17,8 +17,20 @@ hlnode.o : hlnode.hpp hlnode.cpp
 	$(CXX) $(COMPILE_FLAGS) -c -o hlnode.o hlnode.cpp
 
 
+# Build highlighting files from internet sources:
 hl:
 	cd hlfilework      && \
 	./elements_make_hl && \
 	./css_make_hl      && \
 	./css3_make_hl
+
+# Delete all generated content from the directory
+clean:
+	rm -f fencedfilter # executable
+	rm -f *.o          # object files
+	rm -f hlindex      # unit test file
+	rm -f hlnode       # unit test file
+	rm -f css.hl       # css highlighting file from `make hl` target
+	rm -f css3.hl      # css highlighting file from `make hl` target
+	rm -f elements.hl  # elements highlighting file from `make hl` target
+	rm -f -r html      # Output of Doxygen
