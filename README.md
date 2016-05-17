@@ -44,14 +44,16 @@ should be familiar to people who have cloned/downloaded projects from GitHub.
 
 ### Building
 
-Use `cd` to enter the directory, then run `make`.  That's it.
+Use `cd` to enter the directory, then run `make`.  That's it.  The project only
+uses standard libraries, so there are no dependencies except for having the
+compiler suite installed.
 
 See the [Compatibility](#compatibility) section above for why this may not work
 in non-Linux environments.
 
-As I write this README, it occurs to me that I could also have the makefile run
-the utilities in `hlfilework`.  I will get around to this, but I want to complete
-this README first.
+Run `make hl` to build the `css`, `css3` and `elements` highlighting files that
+are used with examples in the [User Guide](userguide.md).  See
+[Preparing Documentation](#preparing-documentation) for more.
 
 ### Installing
 
@@ -59,6 +61,21 @@ There is no `install` command in the makefile.  For now, I am expecting that the
 `fencedfilter` will reside in a project directory to be run by Doxygen.  The main
 reason for this that the program looks for the highlighting files in the working
 directory.
+
+### Preparing Documentation
+
+The [User Guide](userguide.md) includes several examples for using highlighting
+files, but the highlighting can't be seen until the highlighting files are built
+and Doxygen has been run.  The following steps are will prepare the documentation
+so the results of FencedFilter can be seen.
+
+1. Run `make hl` to generate the highlighting files.
+1. Run `doxygen` in order to run _FencedFilter_.
+1. Goto to the `html` directory and open the index file (`index.htm` or `index.html`).
+1. Open the User Guide
+1. From the _Main Page_, click _FencedFilter User Guide_.
+1. Look at the examples near the bottom of the page.
+
 
 ## Using FencedFilter
 
@@ -119,20 +136,20 @@ As I have said above, interest in the program, if there is any,  will influence
 future development.  It works as I need it to for now, though I am itching to do
 mode.  These are some things I would like to do:
 
--# I'd like to make it a proper Markdown processor to generate HTML.  It doesn't
+1. I'd like to make it a proper Markdown processor to generate HTML.  It doesn't
    seem like that would be too hard, but I can't count the times I have thought
    that, only to spend weeks or more working on non-essential programs.
 
--# I should refactor the main page to be a better example of C++ coding.
+1. I should refactor the main page to be a better example of C++ coding.
 
--# As it stands, the program runs for every file that Doxygen scans, rereading
+1. As it stands, the program runs for every file that Doxygen scans, rereading
    the highlighting files each time.  I have considered making the program into
    a service that a very small program would access with sockets.  That way,
    the highlighting files would be read once the first time requested, then
    reused during the running of Doxygen.  This would only benefit larger projects,
    and perhaps not even measurably, but the idea appeals to me.
 
--# I alphabetize the keywords when I parse the highlighting files, but then
+1. I alphabetize the keywords when I parse the highlighting files, but then
    do a sequential search through the words.  There is room for optimization
    by keeping a count of keywords and then doing a tree-like search by comparing
    comparing values at several indexes of the keyword array.

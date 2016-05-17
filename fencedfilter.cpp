@@ -15,12 +15,10 @@
  * be enclosed with `div`s or `span`s with class set according to matching
  * words in the highlight file.
  *
- * - @ref UserManual
  * - @ref userguide.md
  * - @ref fencedfilter.cpp
  * - @ref IDENTIFYING_COMMENTS
  * - @ref TestBlockComments
- * - @ref SyntaxSamples
  */
 
 #include <stdio.h>

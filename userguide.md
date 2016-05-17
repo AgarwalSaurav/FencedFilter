@@ -1,4 +1,4 @@
-# Fenced Filter User Guide
+# FencedFilter User Guide
 
 - [Introduction](#introduction)
 - [How FencedFilter Works](#how-fencedfilter-works)
